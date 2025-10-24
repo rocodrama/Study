@@ -1,6 +1,6 @@
 # import pathlib
 from pathlib import Path
- 
+
 ### 경로 생성 및 확인 ###
 
 # 경로 객체 생성
@@ -68,19 +68,21 @@ path.with_suffix(".txt")
 p = Path.cwd() / "file" / "test"
 
 # 디렉토리 생성
-p.mkdir(parents=False, exist_ok=True) # parents: 상위 폴더 없으면 함께 생성, exist_ok: 이미지 존재해도 에러 무시
+p.mkdir(
+    parents=False, exist_ok=True
+)  # parents: 상위 폴더 없으면 함께 생성, exist_ok: 이미지 존재해도 에러 무시
 
 # 빈 디렉토리 삭제
 # p.rmdir()
 
 # 파일 또는 디렉토리 이름 변경 또는 이동(폴더 생성x, 이름만 변경)
-p.rename(p.cwd()/'file/new_path/new_name')
+p.rename(p.cwd() / "file/new_path/new_name")
 
 # 파일 또는 디렉토리 이동(대상 경로 있으면 덮어쓰기)
 p.replace()
 
 # 파일 삭제
-p.unlink() 
+p.unlink()
 
 ### 경로 탐색 및 검색 ###
 
@@ -99,10 +101,10 @@ p.resolve()
 ### 파일 내용 입출력 ###
 
 # 파일의 모든 텍스트 내용을 읽어 문자열로 반환
-p.read_text(encoding='utf-8')
+p.read_text(encoding="utf-8")
 
 # 문자열 데이터를 파일에 저장(덮어쓰기)
-p.write_text("New contents",encoding='utf-8')
+p.write_text("New contents", encoding="utf-8")
 
 # 파일의 바이너리 내요을 읽어 bytes 객체로 반환
 p.read_bytes()
